@@ -8,20 +8,11 @@ export const AccessibilityMenu = () => {
     const { isOpen, onToggle } = useDisclosure();
     return (
         <>
-        <Flex
-        flex={{ base: 1, md: 'auto' }}
-        ml={{ base: -2 }}
-        display={{ base: 'flex', md: 'none' }}>
-        <IconButton
-          onClick={onToggle}
-          icon={
-            isOpen ? <CloseIcon w={3} h={3} /> : <MdAccessibilityNew w={10} h={10} />
-          }
-          variant={'ghost'}
-          aria-label={'Toggle Accessibility Navigation'}
-        />
-      </Flex>
-        
+        <Menu>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                Acessibilidade
+            </MenuButton>
+        </Menu>
         {/*<Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                 Acessibilidade

@@ -24,7 +24,7 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
 import { DarkModeSwitch } from './DarkModeSwitch';
-import { AccessibilityMenu } from './AccessibilityMenu';
+import { AccessibilityMenu, MobileAccessibilityMenu } from './AccessibilityMenu';
 import { ContrastSwitch } from './ContrastSwitch';
 
   export default function WithSubnavigation() {
@@ -61,7 +61,7 @@ import { ContrastSwitch } from './ContrastSwitch';
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-              
+             logo
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -96,8 +96,8 @@ import { ContrastSwitch } from './ContrastSwitch';
               }}>
               Criar conta
             </Button>
-            
-            <AccessibilityNav />
+            <AccessibilityNav/>
+            <MobileAccessibilityNav />
           </Stack>
         </Flex>
   
@@ -150,13 +150,9 @@ import { ContrastSwitch } from './ContrastSwitch';
                   </Stack>
                 </PopoverContent>
               )}
-            
-
-            </Popover>
-            
+            </Popover>            
           </Box>
-        ))}
-        
+        ))}        
       </Stack>
       </>
     );
@@ -267,7 +263,7 @@ import { ContrastSwitch } from './ContrastSwitch';
   
     return (
     <>
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4} display={{ base: 'none', md: 'inline-flex' }}>
           <Box key='Accessibilidade'>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
@@ -306,6 +302,53 @@ import { ContrastSwitch } from './ContrastSwitch';
       </>
     );
   };
+
+const MobileAccessibilityNav = () => {
+  const linkColor = useColorModeValue('gray.600', 'gray.200');
+  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  return (
+    <Stack
+        //bg={useColorModeValue('white', 'gray.800')}
+        //p={4}
+        display={{ md: 'none' }}>
+          <Box key='Accessibilidade'>
+            <Popover trigger={'hover'} placement={'bottom-start'}>
+              <PopoverTrigger>
+                <Link
+                  p={2}
+                  href={'#'}
+                  fontSize={'sm'}
+                  fontWeight={500}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: linkHoverColor,
+                  }}>
+                  <MobileAccessibilityMenu />
+                </Link>
+              </PopoverTrigger>
+  
+                <PopoverContent
+                  border={0}
+                  boxShadow={'xl'}
+                  bg={popoverContentBgColor}
+                  p={4}
+                  rounded={'xl'}
+                  minW={'sm'}>
+                  <Stack>
+                    <AccessibilitySubNav />
+                  </Stack>
+                </PopoverContent>
+              
+            </Popover>
+            
+          </Box>
+        )
+        
+      </Stack>
+  )
+}
   
   const AccessibilitySubNav = () => {
     return (
