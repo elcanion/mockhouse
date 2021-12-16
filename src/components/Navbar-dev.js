@@ -170,16 +170,17 @@ import { ContrastSwitch } from './ContrastSwitch';
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+        _hover={{ bg: useColorModeValue('gray.500', 'gray.1000') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
+              _groupHover={{ color: useColorModeValue('black', 'yellow.1000') }}
               fontWeight={500}>
               {label}
             </Text>
-            <Text fontSize={'sm'}>{subLabel}</Text>
+            <Text fontSize={'sm'}
+             color={useColorModeValue('black', 'white')}>{subLabel}</Text>
           </Box>
           <Flex
             transition={'all .3s ease'}
@@ -189,7 +190,7 @@ import { ContrastSwitch } from './ContrastSwitch';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'yellow.1000'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>

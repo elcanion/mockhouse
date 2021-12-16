@@ -1,9 +1,7 @@
 import { createClient } from 'contentful'
-import { AdContainer } from '../src/components/AdContainer'
-import WithSubnavigation from '../src/components/Navbar-dev'
-import AdBanner from '../src/components/AdBanner/AdBanner'
 import { useState } from 'react'
 import Head from 'next/head'
+import { Layout } from '../src/components/Layout'
 
 export async function getServerSideProps() {
 
@@ -36,13 +34,7 @@ const Index = ({imoveis}) => {
         <title>12162021 build</title>
         <meta name="keywords" content="imobiliaria" />
       </Head>
-      <WithSubnavigation />
-        <AdContainer>
-        
-          {
-            imoveis.map(imovel => <AdBanner key={imovel.sys.id} imovel={imovel} />)
-          }
-        </AdContainer>
+      <Layout imoveis={imoveis}/>
     </>
   )
 }
