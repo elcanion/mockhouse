@@ -1,45 +1,35 @@
 {
-<<<<<<< HEAD
-=======
-  "name": "nextjs",
-  "version": "1.0.0",
->>>>>>> 70a93b9813274aef3f18eac62119a5f1130b20f5
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-<<<<<<< HEAD
-    "start": "next start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elcanion/si-re.git"
-  },
-  "dependencies": {
-    "@chakra-ui/icons": "^1.0.0",
-    "@chakra-ui/react": "^1.4.2",
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0",
-    "contentful": "^9.1.5",
-    "embla-carousel-react": "^6.0.2",
-    "framer-motion": "^4.0.3",
-    "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-slick": "^0.28.1"
-=======
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0"
->>>>>>> 70a93b9813274aef3f18eac62119a5f1130b20f5
-  }
-}
+      "name": "nextjs",
+      "version": "1.0.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/elcanion/si-re.git"
+      },
+      "dependencies": {
+        "@chakra-ui/icons": "^1.0.0",
+        "@chakra-ui/react": "^1.4.2",
+        "@emotion/react": "^11.0.0",
+        "@emotion/styled": "^11.0.0",
+        "contentful": "^9.1.5",
+        "embla-carousel-react": "^6.0.2",
+        "framer-motion": "^4.0.3",
+        "next": "latest",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-icons": "^4.3.1",
+        "react-slick": "^0.28.1",
+        "start": "next start",
+        "lint": "next lint"
+      },
+      "devDependencies": {
+        "eslint": "7.32.0",
+        "eslint-config-next": "11.1.0"
+      }
+    }
+    
