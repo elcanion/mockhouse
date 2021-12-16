@@ -85,7 +85,7 @@ export default function CaptionCarousel({ imovel }) {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
       {carousel.map((card, index) => (
             <Image
-                
+            key={index}
             width={'100%'}
             height={'100%'}
             position={'relative'}
