@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </ColorModeProvider>
     </ChakraProvider>
-
+{
+  console.log('hehe')
+}
     </>
   )
 }
