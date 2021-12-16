@@ -1,9 +1,7 @@
 import { createClient } from 'contentful'
-import { AdContainer } from '../components/AdContainer'
-import { Footer } from '../components/Footer'
-import WithSubnavigation from '../components/Navbar-dev'
-import AdBanner from '../components/AdBanner/AdBanner'
-import SearchBar from '../components/SearchBar'
+import { AdContainer } from '../src/components/AdContainer'
+import WithSubnavigation from '../src/components/Navbar-dev'
+import AdBanner from '../src/components/AdBanner/AdBanner'
 import { useState } from 'react'
 import Head from 'next/head'
 
