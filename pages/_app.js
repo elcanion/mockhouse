@@ -1,4 +1,5 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
+import { Layout } from '../src/components/Layout'
 import theme from '../src/theme'
 
 
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }) {
           useSystemColorMode: true,
         }}
       >
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ColorModeProvider>
     </ChakraProvider>
 {

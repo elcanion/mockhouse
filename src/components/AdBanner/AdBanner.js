@@ -16,9 +16,10 @@ import {
 import { AdComment } from './AdComment';
 import { AdHeading } from './AdHeading';
 import AdCarousel from './AdCarousel';
+import Link from 'next/link';
   
   export default function AdBanner({ imovel }) {
-    const { cidade, carousel } = imovel.fields
+    const { cidade, carousel, slug } = imovel.fields
     return (
       <Container maxW={'5xl'}>
         <Stack
@@ -46,7 +47,8 @@ import AdCarousel from './AdCarousel';
                 bg={'yellow.1000'}
                 colorScheme={'yellow'}
                 _hover={{ bg: 'yellow.200' }}>
-                Ver mais
+                  <Link href={'/imovel/' + slug}>Ver mais</Link>
+                
               </Button>
               }
             </Stack>
