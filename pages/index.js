@@ -8,8 +8,8 @@ import AdBanner from '../src/components/AdBanner/AdBanner'
 export async function getServerSideProps() {
 
   const client = createClient({
-    space: 'wbl12ix2k30c',
-    accessToken: 'A6JXPzEUPWEnRIyOqsz-AhFHEjq7W8JmTFlIZ1Jojeg',
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   })
   let loading = true;
 
