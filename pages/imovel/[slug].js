@@ -1,7 +1,9 @@
 import { Flex, Text } from "@chakra-ui/react"
 import { createClient } from "contentful"
+import { AccessibilityMenu } from '../../src/components/AccessibilityMenu'
 
 export default function ImovelDetails({ imovel }) {
+    if (!imovel) return <AccessibilityMenu />
     const { cidade, carousel, endereco, preco } = imovel.fields
 
     return (
