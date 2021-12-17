@@ -26,7 +26,9 @@ export const AccessibilityMenu = () => {
 export const MobileAccessibilityMenu = () => {
     return (
         <Menu>
-            <MenuButton as={IconButton} icon={<MdAccessibility />}/>
+            <MenuButton as={IconButton} aria-label={'Acessibilidade'} rightIcon={<MdAccessibility />}>
+                Acessibilidade
+            </MenuButton>
         </Menu>
     )
 }
