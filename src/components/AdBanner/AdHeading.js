@@ -5,7 +5,9 @@ export const AdHeading = ({imovel}) => {
   const { codigo, cidade, tipo, endereco } = imovel.fields
     return (
         <>
-        <Stack direction={'row'} align={'center'}>
+        <Stack direction={'row'} 
+          align={'center'}
+          >
             <MdRoom/>
             <Text>{cidade}</Text>
             <Text 

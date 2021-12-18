@@ -3,31 +3,34 @@
       "version": "1.0.0",
       "private": true,
       "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start"
+            "dev": "next dev",
+            "build": "next build",
+            "start": "next start"
       },
       "repository": {
-        "type": "git",
-        "url": "git+https://github.com/elcanion/si-re.git"
+            "type": "git",
+            "url": "git+https://github.com/elcanion/si-re.git"
       },
       "dependencies": {
-        "@chakra-ui/icons": "^1.0.0",
-        "@chakra-ui/react": "^1.4.2",
-        "@emotion/react": "^11.0.0",
-        "@emotion/styled": "^11.0.0",
-        "contentful": "^9.1.5",
-        "embla-carousel-react": "^6.0.2",
-        "framer-motion": "^4.0.3",
-        "next": "latest",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-icons": "^4.3.1",
-        "react-slick": "^0.28.1"
+            "@chakra-ui/icons": "^1.0.0",
+            "@chakra-ui/react": "^1.4.2",
+            "@emotion/react": "^11.0.0",
+            "@emotion/styled": "^11.0.0",
+            "@fortawesome/fontawesome-svg-core": "^1.2.36",
+            "@fortawesome/free-brands-svg-icons": "^5.15.4",
+            "@fortawesome/free-solid-svg-icons": "^5.15.4",
+            "@fortawesome/react-fontawesome": "^0.1.16",
+            "contentful": "^9.1.5",
+            "embla-carousel-react": "^6.0.2",
+            "framer-motion": "^4.0.3",
+            "next": "latest",
+            "react": "^17.0.2",
+            "react-dom": "^17.0.2",
+            "react-icons": "^4.3.1",
+            "react-slick": "^0.28.1"
       },
       "devDependencies": {
-        "eslint": "7.32.0",
-        "eslint-config-next": "11.1.0"
+            "eslint": "7.32.0",
+            "eslint-config-next": "11.1.0"
       }
-    }
-    
+}

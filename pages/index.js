@@ -4,6 +4,8 @@ import Head from 'next/head'
 import { Layout } from '../src/components/Layout'
 import { AdContainer } from '../src/components/AdContainer'
 import AdBanner from '../src/components/AdBanner/AdBanner'
+import { Hero } from '../src/components/Hero'
+import { Button } from '@chakra-ui/react'
 
 export async function getServerSideProps() {
 
@@ -36,12 +38,15 @@ const Index = ({imoveis}) => {
         <title>12162021 build</title>
         <meta name="keywords" content="imobiliaria" />
       </Head>
+      
+      <Hero />
       <AdContainer>
         
           {
             imoveis.map(imovel => <AdBanner key={imovel.sys.id} imovel={imovel} />)
           }
         </AdContainer>
+  
     </>
   )
 }

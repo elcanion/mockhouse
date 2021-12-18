@@ -19,7 +19,7 @@ import Slider from 'react-slick';
 // Settings for the slider
 const settings = {
   dots: false,
-  arrows: true,
+  arrows: false,
   //fade: true,
   infinite: true,
   autoplay: true,
@@ -48,23 +48,24 @@ export default function CaptionCarousel({ imovel }) {
 
   return (
       <>
-    {<Blob
-    w={'80%'}
-    h={'120%'}
-    position={'absolute'}
-    top={'-10%'}
-    left={0}
-    zIndex={0}
-    color={useColorModeValue('yellow.1000', 'yellow.1000')}
-    />
+    {
+      <Blob
+      w={'100%'}
+      h={'120%'}
+      position={'absolute'}
+      top={'-10%'}
+      left={0}
+      zIndex={0}
+      color={useColorModeValue('yellow.1000', 'yellow.1000')}
+      />
     }
   
-    <Box
+    <Container
       position={'relative'}
       rounded={'20'}
-      height={{base: '500px', medium: '200px', small: '200px'}}
-      width={'80%'}
-      overflow={'hidden'}
+      //height={{base: '500px', medium: '200px', small: '200px'}}
+      //width={'100%'}
+      //overflow={'hidden'}
       //backgroundColor={'red'}
       >
       {/* CSS files for react-slick */}
@@ -95,7 +96,7 @@ export default function CaptionCarousel({ imovel }) {
         />
         ))}
       </Slider>
-    </Box>
+    </Container>
     </>
   );
 }

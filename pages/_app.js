@@ -18,9 +18,6 @@ function MyApp({ Component, pageProps }) {
         </Layout>
       </ColorModeProvider>
     </ChakraProvider>
-{
-  console.log('hehe')
-}
     </>
   )
 }

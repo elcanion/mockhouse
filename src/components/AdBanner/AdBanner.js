@@ -12,21 +12,28 @@ import {
     createIcon,
     IconProps,
     useColorModeValue,
+    Link,
   } from '@chakra-ui/react';
 import { AdComment } from './AdComment';
 import { AdHeading } from './AdHeading';
 import AdCarousel from './AdCarousel';
-import Link from 'next/link';
+//import Link from 'next/link';
   
   export default function AdBanner({ imovel }) {
     const { cidade, carousel, slug } = imovel.fields
     return (
-      <Container maxW={'5xl'}>
+      //<Container maxW={'5x1'}>
+      <Container
+        maxW={'6xl'}
+        //backgroundColor={'black'}
+      >
         <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 20, md: 28 }}
-          direction={{ base: 'column', md: 'row' }}>
+          //px={{ base: 40, md: 40 }}
+          direction={{ base: 'column', md: 'row' }}
+          >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <AdHeading imovel={imovel}/>
             <AdComment imovel={imovel}/>
@@ -39,14 +46,17 @@ import Link from 'next/link';
                 {//<AdComment imovel={imovel}/>
                 }
               {<Button
-                rounded={'full'}
+                //rounded={'full'}
                 size={'lg'}
                 fontWeight={600}
                 px={6}
-                color={'black'}
-                bg={'yellow.1000'}
+                color={'white'}
+                //bg={'yellow.1000'}
+                bg={'none'}
+                borderWidth={'1px'}
+                borderRadius={'none'}
                 colorScheme={'yellow'}
-                _hover={{ bg: 'yellow.200' }}>
+                _hover={{ bg: 'yellow.1000', color: 'black', border:'none'}}>
                   <Link href={'/imovel/' + slug}>Ver mais</Link>
                 
               </Button>

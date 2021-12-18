@@ -16,6 +16,7 @@ import {
     useDisclosure,
     MenuButton,
     Image,
+    Menu,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -27,6 +28,8 @@ import { DarkModeSwitch } from './DarkModeSwitch';
 import { AccessibilityMenu, MobileAccessibilityMenu } from './AccessibilityMenu';
 import { ContrastSwitch } from './ContrastSwitch';
 import { Unamed } from './logo';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { MdAccessibility } from 'react-icons/md';
 
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -50,10 +53,17 @@ import { Unamed } from './logo';
             display={{ base: 'flex', md: 'none' }}>
             <IconButton
               onClick={onToggle}
+              fontSize={'20px'}
               icon={
-                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                //isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                isOpen ? <FaTimes 
+                        /> : <FaBars />
               }
               variant={'ghost'}
+              color={useColorModeValue('black', 'white')}
+              borderColor={useColorModeValue('black', 'white')}
+              borderWidth={'1px'}
+              borderRadius={'none'}
               aria-label={'Toggle Navigation'}
             />
           </Flex>
@@ -89,7 +99,10 @@ import { Unamed } from './logo';
             <Button
               as={'a'}
               fontSize={'sm'}
+              p={2}
               fontWeight={400}
+              borderRadius={'none'}
+              borderWidth={'1px'}
               variant={'link'}
               href={'#'}>
               Entrar
@@ -100,13 +113,14 @@ import { Unamed } from './logo';
               fontWeight={600}
               color={'black'}
               bg={'yellow.1000'}
+              borderRadius={'none'}
               href={'#'}
               _hover={{
                 bg: 'yellow.200',
               }}>
               Criar conta
             </Button>
-            <AccessibilityNav/>
+            <AccessibilityNav />
             <MobileAccessibilityNav />
           </Stack>
         </Flex>
@@ -136,6 +150,7 @@ import { Unamed } from './logo';
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
+                  borderWidth={'1px'}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
@@ -273,7 +288,10 @@ import { Unamed } from './logo';
   
     return (
     <>
-      <Stack direction={'row'} spacing={4} display={{ base: 'none', md: 'inline-flex' }}>
+      <Stack direction={'row'} spacing={4} 
+      display={{ base: 'none', md: 'inline-flex' }}
+      alignItems={'center'}
+      >
           <Box key='Accessibilidade'>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
@@ -282,12 +300,13 @@ import { Unamed } from './logo';
                   href={'#'}
                   fontSize={'sm'}
                   fontWeight={500}
+                  borderWidth={'1px'}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,
                   }}>
-                  <AccessibilityMenu />
+                      Acessibilidade
                 </Link>
               </PopoverTrigger>
   
@@ -335,7 +354,21 @@ const MobileAccessibilityNav = () => {
                     textDecoration: 'none',
                     color: linkHoverColor,
                   }}>
-                  <MobileAccessibilityMenu />
+                  <IconButton
+                    //onClick={onToggle}
+                    fontSize={'20px'}
+                    icon={
+                      <MdAccessibility w={3} h={3} />
+                      //isOpen ? <FaTimes 
+                      //        /> : <FaBars />
+                    }
+                    variant={'ghost'}
+                    color={useColorModeValue('black', 'white')}
+                    borderColor={useColorModeValue('black', 'white')}
+                    borderWidth={'1px'}
+                    borderRadius={'100%'}
+                    aria-label={'Toggle Navigation'}
+                  />
                 </Link>
               </PopoverTrigger>
   

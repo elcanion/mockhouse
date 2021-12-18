@@ -1,7 +1,9 @@
 import { extendTheme } from '@chakra-ui/react'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
+
 const fonts = { mono: `'Menlo', monospace` }
+//const fonts = { mono: `'Bodoni Moda', monospace` }
 
 const breakpoints = createBreakpoints({
   sm: '40em',
@@ -11,6 +13,10 @@ const breakpoints = createBreakpoints({
 })
 
 const theme = extendTheme({
+  fonts: {
+    //heading: 'Montserrat',
+    body: 'Montserrat'
+  },
   colors: {
     brand: {
       
@@ -67,7 +73,7 @@ const theme = extendTheme({
       900: '#1d0e00',
     },
   },
-  fonts,
+  //fonts,
   breakpoints,
   icons: {
     logo: {
