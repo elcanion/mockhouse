@@ -118,7 +118,7 @@ import { MdAccessibility } from 'react-icons/md';
               borderRadius={'none'}
               href={'#'}
               _hover={{
-                bg: 'yellow.200',
+                bg: '#4B5A68',
               }}>
               Criar conta
             </Button>
