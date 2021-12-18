@@ -153,7 +153,7 @@ import { MdAccessibility } from 'react-icons/md';
                   fontSize={'sm'}
                   fontWeight={500}
                   borderWidth={'1px'}
-                  borderColor={useColorModeValue('black', 'gray.200')}
+                  borderColor={linkColor}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
