@@ -50,10 +50,13 @@ import AdCarousel from './AdCarousel';
                 size={'lg'}
                 fontWeight={600}
                 px={6}
-                color={'white'}
+                //color={'white'}
                 //bg={'yellow.1000'}
                 bg={'none'}
-                borderWidth={'1px'}
+                //bg={useColorModeValue('white', 'black')}
+                color={useColorModeValue('black', 'white')}
+                borderWidth={'2px'}
+                borderColor={useColorModeValue('black', 'white')}
                 borderRadius={'none'}
                 colorScheme={'yellow'}
                 _hover={{ bg: 'yellow.1000', color: 'black', border:'none'}}>

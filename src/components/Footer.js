@@ -9,7 +9,9 @@ export const Footer = (props) =>
     px="10px" 
     justifyContent={'flex-end'}
     alignItems={'center'}
-    bgColor={useColorModeValue('white', 'black')} 
+    bgColor={useColorModeValue('white', 'black')}
+    borderTopWidth={'1px'}
+    borderTopColor={useColorModeValue('gray.200', 'gray.900')}
     >
         <Text 
         mr={'auto'} 
@@ -25,6 +27,7 @@ export const Footer = (props) =>
               //isOpen ? <FaTimes 
               //        /> : <FaBars />
             }
+            mx={3}
             variant={'ghost'}
             color={useColorModeValue('black', 'white')}
             borderColor={useColorModeValue('black', 'white')}
@@ -40,6 +43,7 @@ export const Footer = (props) =>
               //isOpen ? <FaTimes 
               //        /> : <FaBars />
             }
+            mx={3}
             variant={'ghost'}
             color={useColorModeValue('black', 'white')}
             borderColor={useColorModeValue('black', 'white')}
@@ -55,6 +59,7 @@ export const Footer = (props) =>
               //isOpen ? <FaTimes 
               //        /> : <FaBars />
             }
+            mx={3}
             variant={'ghost'}
             color={useColorModeValue('black', 'white')}
             borderColor={useColorModeValue('black', 'white')}

@@ -39,7 +39,7 @@ import { MdAccessibility } from 'react-icons/md';
       <Box>
         <Flex
           bg={useColorModeValue('white', 'black')}
-          color={useColorModeValue('gray.600', 'white')}
+          color={useColorModeValue('black', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
@@ -100,9 +100,11 @@ import { MdAccessibility } from 'react-icons/md';
               as={'a'}
               fontSize={'sm'}
               p={2}
-              fontWeight={400}
+              fontWeight={500}
               borderRadius={'none'}
               borderWidth={'1px'}
+              borderColor={useColorModeValue('black', 'gray.200')}
+              color={useColorModeValue('black', 'gray.200')}
               variant={'link'}
               href={'#'}>
               Entrar
@@ -134,7 +136,7 @@ import { MdAccessibility } from 'react-icons/md';
   }
   
   const DesktopNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkColor = useColorModeValue('black', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
@@ -151,6 +153,7 @@ import { MdAccessibility } from 'react-icons/md';
                   fontSize={'sm'}
                   fontWeight={500}
                   borderWidth={'1px'}
+                  borderColor={useColorModeValue('black', 'gray.200')}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
@@ -282,7 +285,7 @@ import { MdAccessibility } from 'react-icons/md';
   };
 
   const AccessibilityNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkColor = useColorModeValue('black', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
@@ -301,6 +304,7 @@ import { MdAccessibility } from 'react-icons/md';
                   fontSize={'sm'}
                   fontWeight={500}
                   borderWidth={'1px'}
+                  borderColor={linkColor}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
