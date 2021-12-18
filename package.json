@@ -16,6 +16,7 @@
             "@chakra-ui/react": "^1.4.2",
             "@emotion/react": "^11.0.0",
             "@emotion/styled": "^11.0.0",
+            "@fontsource/bodoni-moda": "^4.5.0",
             "@fortawesome/fontawesome-svg-core": "^1.2.36",
             "@fortawesome/free-brands-svg-icons": "^5.15.4",
             "@fortawesome/free-solid-svg-icons": "^5.15.4",

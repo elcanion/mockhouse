@@ -1,4 +1,5 @@
 import { Box, Button, Container, Heading, Icon, Text, useBreakpointValue, useColorModeValue } from "@chakra-ui/react"
+import "@fontsource/bodoni-moda"
 
 export const HeroBanner = ({ title }) => {
 return (
