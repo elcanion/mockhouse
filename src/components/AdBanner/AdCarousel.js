@@ -56,7 +56,7 @@ export default function CaptionCarousel({ imovel }) {
       top={'-10%'}
       left={0}
       zIndex={0}
-      color={useColorModeValue('yellow.1000', 'yellow.1000')}
+      color={useColorModeValue('brand.light.yellow', 'brand.dark.yellow')}
       />
     }
   

@@ -3,7 +3,7 @@ import { Flex, useColorMode } from '@chakra-ui/react'
 export const AdContainer = (props) => {
   const { colorMode } = useColorMode()
 
-  const bgColor = { light: 'gray.50', dark: 'gray.1000' }
+  const bgColor = { light: 'brand.light.white', dark: 'brand.dark.gray' }
 
   const color = { light: 'black', dark: 'white' }
   return (

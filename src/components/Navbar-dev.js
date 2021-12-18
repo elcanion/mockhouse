@@ -113,8 +113,8 @@ import { MdAccessibility } from 'react-icons/md';
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
-              color={'black'}
-              bg={'yellow.1000'}
+              color={'white'}
+              bg={useColorModeValue('brand.light.blue', 'brand.dark.yellow')}
               borderRadius={'none'}
               href={'#'}
               _hover={{

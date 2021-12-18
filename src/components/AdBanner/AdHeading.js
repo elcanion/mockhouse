@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { MdRoom } from "react-icons/md"
 
 export const AdHeading = ({imovel}) => {
@@ -12,7 +12,7 @@ export const AdHeading = ({imovel}) => {
             <Text>{cidade}</Text>
             <Text 
               pl={5}
-              color={'yellow.1000'}
+              color={useColorModeValue('brand.light.yellow', 'brand.dark.yellow')}
             >
               Código {codigo}
             </Text>
@@ -38,7 +38,9 @@ export const AdHeading = ({imovel}) => {
                   <Flex mb={'-35'}>{tipo}</Flex>
               </Text>
               <br />
-              <Text as={'span'} color={'yellow.1000'} fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}>
+              <Text as={'span'} 
+              color={useColorModeValue('brand.light.yellow', 'brand.dark.yellow')} 
+              fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}>
                 {endereco}
               </Text>
             </Heading>

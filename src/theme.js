@@ -18,7 +18,20 @@ const theme = extendTheme({
   },
   colors: {
     brand: {
-      
+      dark: {
+        black: "#000000",
+        gray: "#121212",
+        white: "#f8f0f2",
+        yellow: "#ffaf5f",
+        blue: "#3c4a53",
+      },
+      light: {
+        black: "#000000",
+        gray: "#121212",
+        white: "#ffffff",
+        yellow: "#A31D05",
+        blue: "#3c4a53",
+      }
     },
     black: '#000000',
     gray: {

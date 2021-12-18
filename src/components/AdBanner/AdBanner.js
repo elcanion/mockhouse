@@ -31,7 +31,6 @@ import AdCarousel from './AdCarousel';
           align={'center'}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 20, md: 28 }}
-          //px={{ base: 40, md: 40 }}
           direction={{ base: 'column', md: 'row' }}
           >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
@@ -59,7 +58,7 @@ import AdCarousel from './AdCarousel';
                 borderColor={useColorModeValue('black', 'white')}
                 borderRadius={'none'}
                 colorScheme={'yellow'}
-                _hover={{ bg: 'yellow.1000', color: 'black', border:'none'}}>
+                _hover={{ bg: useColorModeValue('brand.light.yellow', 'brand.dark.yellow'), color: 'black', border:'none'}}>
                   <Link href={'/imovel/' + slug}>Ver mais</Link>
                 
               </Button>

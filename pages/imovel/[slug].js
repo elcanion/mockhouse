@@ -8,6 +8,7 @@ export default function ImovelDetails({ imovel }) {
     const { cidade, carousel, endereco, preco } = imovel.fields
 
     return (
+        
         <SlugContainer imovel={imovel}/>
     )
 }
