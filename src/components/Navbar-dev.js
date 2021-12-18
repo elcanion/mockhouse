@@ -401,7 +401,8 @@ const MobileAccessibilityNav = () => {
     return (
         <>
         <DarkModeSwitch />
-        <ContrastSwitch />
+        {//<ContrastSwitch />
+        }
         </>
     );
   };
