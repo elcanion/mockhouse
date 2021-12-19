@@ -1,53 +1,59 @@
-import { Box, Button, Container, Heading, Icon, Text, useBreakpointValue, useColorMode, useColorModeValue } from "@chakra-ui/react"
+import { Box, Button, Container, Flex, Heading, Icon, Text, useBreakpointValue, useColorMode, useColorModeValue } from "@chakra-ui/react"
 import "@fontsource/bodoni-moda"
+import SlugCarousel from './SlugCarousel'
 
-export const HeroBanner = ({ title }) => {
+export const SlugFeature = ({ feature, imovel }) => {
 return (
     <>
         <Box
             width={'60vw'}
-            pl={'5%'}
+            marginTop={{ base: '1', sm: '5' }}
+            display={'flex'}
+            flexDirection={{ base: 'column', sm: 'row' }}
+            justifyContent={'space-between'}
         >
-            <Heading 
-                as={'h1'}
-                fontFamily={'Bodoni Moda'}
-                fontSize="4vw"
-                color={useColorModeValue('gray.1000', 'white')}
-            >
-                {title}
-            </Heading>
+            <Box
+                display={'flex'}
+                flex={'1'}
+                flexDirection={'column'}
+                justifyContent={'center'}
+                marginLeft={50}
+                marginTop={{ base: '3', sm: '0' }}
+                paddingEnd={50}
+                >
+                <Heading 
+                    as={'h1'}
+                    fontFamily={'Bodoni Moda'}
+                    fontSize="4vw"
+                    color={useColorModeValue('gray.1000', 'white')}
+                >
+                    {feature}
+                </Heading>
+                <Text
+                    as={'p'}
+                    marginTop={'2'}
+                    color={useColorModeValue('gray.1000', 'white')}
+                    fontSize={'lg'}
+                >
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book.
+                </Text>
+            </Box>
+            <Container
+                //flex={'1'}
+                //overflow={'hidden'}
+                marginLeft={100}
+                >
+                <SlugCarousel imovel={imovel} />
+            </Container>
             
-            <Button
-            mt={10}
-            bg={useColorModeValue('white', 'black')}
-            color={useColorModeValue('black', 'white')}
-            borderColor={useColorModeValue('black', 'white')}
-            borderWidth={'1px'}
-            borderRadius={'none'}
-            >Saiba mais</Button>
-        </Box>
-        <Box
-            pl={'40%'}
-            pr={'10%'}
-        >
-            <Logo
-                w={'60%'}
-                h={'60%'}
-                position={'absolute'}
-                top={'20%'}
-                left={'40%'}
-                //zIndex={0}
-                //color={useColorModeValue('yellow.1000', 'yellow.1000')}
-            />
-        </Box>       
+        </Box>  
     </>
     )
 }
 
-
-HeroBanner.defaultProps = {
-    title: 'O que verificar na compra de um imóvel na planta?',
-  }
 
 export const Logo = (props) => {
     return (

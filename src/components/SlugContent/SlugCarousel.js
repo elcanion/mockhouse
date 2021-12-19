@@ -29,7 +29,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-export default function CaptionCarousel({ imovel }) {
+export default function SlugCarousel({ imovel }) {
     const { carousel } = imovel.fields
     carousel.map(card => {
         console.log(card.fields.description)
@@ -48,26 +48,6 @@ export default function CaptionCarousel({ imovel }) {
 
   return (
       <>
-    {
-     <Blob
-      w={'120%'}
-      h={'120%'}
-      position={'absolute'}
-      top={'-10%'}
-      left={'0'}
-      zIndex={0}
-      color={useColorModeValue('brand.light.yellow', 'brand.dark.yellow')}
-      />
-    }
-  
-    <Container
-      position={'relative'}
-      rounded={'20'}
-      //height={{base: '500px', medium: '200px', small: '200px'}}
-      //width={'100%'}
-      //overflow={'hidden'}
-      //backgroundColor={'red'}
-      >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -82,7 +62,8 @@ export default function CaptionCarousel({ imovel }) {
       />
       
       {/* Slider */}
-      
+      {//<Slider {...settings} ref={(slider) => setSlider(slider)}>
+      }
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
       {carousel.map((card, index) => (
             <Image
@@ -96,8 +77,8 @@ export default function CaptionCarousel({ imovel }) {
         />
         ))}
       </Slider>
-    </Container>
-    </>
+      
+      </>
   );
 }
 

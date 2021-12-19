@@ -1,62 +1,36 @@
-import { Flex, Heading, Stack, Text, useColorMode } from "@chakra-ui/react";
+import { Container, Flex, Heading, Stack, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { MdRoom } from "react-icons/md";
+import { SlugFeature } from "./SlugFeature";
+import  SlugFeatureDev from "./SlugFeature-dev";
 
 export function SlugContainer ({ imovel }) {
     const { colorMode } = useColorMode()
   
-    const bgColor = { light: 'gray.50', dark: 'gray.1000' }
+    const bgColor = { light: 'brand.light.white', dark: 'brand.dark.gray' }
   
     const color = { light: 'black', dark: 'white' }
 
-    const { endereco, cidade, tipo, codigo } = imovel.fields
+    const { endereco, cidade, tipo, codigo, carousel } = imovel.fields
     return (
         <>
-        <Flex
-            direction="column"
-            alignItems="center"
-            justifyContent="flex-start"
-            height={'88vh'}
-            bg={bgColor[colorMode]}
-            color={color[colorMode]}
-        >
-        <Stack direction={'row'} 
-          align={'center'}
+        <Container
+          maxWidth={'7x1'} 
+          mx="auto"
+          px={{ base: '0', lg: '12'}}
+          py={{ base: '0', lg: '12'}}
+          //p='12'
+          bg={bgColor[colorMode]}
+          color={color[colorMode]}
           >
-            <MdRoom/>
-            <Text>{cidade}</Text>
-            <Text 
-              pl={5}
-              color={'yellow.1000'}
-            >
-              Código {codigo}
-            </Text>
-        </Stack>
-        <Heading
-              as={'h1'}
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-              <Text
-                as={'span'}
-                position={'relative'}
-                _after={{
-                  content: "''",
-                  width: 'full',
-                  height: '30%',
-                  position: 'absolute',
-                  bottom: 1,
-                  left: 0,
-                  bg: 'yellow.1000',
-                  zIndex: -1,
-                }}>
-                  <Flex mb={'-35'}>{tipo}</Flex>
-              </Text>
-              <br />
-              <Text as={'span'} color={'yellow.1000'} fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}>
-                {endereco}
-              </Text>
-            </Heading>
-            </Flex>
+            <SlugFeatureDev 
+              feature='2 quartos' 
+              description="*Descrição mais detalhada sobre a característica*"
+              imovel={imovel}/>
+            <SlugFeatureDev 
+              feature='Em frente à Praça Japonesa'
+              description="*Descrição mais detalhada sobre a característica*"
+              imovel={imovel}/>
+        </Container>
         </>
     )
 }

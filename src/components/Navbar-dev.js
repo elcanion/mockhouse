@@ -113,12 +113,12 @@ import { MdAccessibility } from 'react-icons/md';
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
-              color={'white'}
+              color={useColorModeValue('white', 'brand.dark.gray')}
               bg={useColorModeValue('brand.light.blue', 'brand.dark.yellow')}
               borderRadius={'none'}
               href={'#'}
               _hover={{
-                bg: '#4B5A68',
+                bg: useColorModeValue('brand.light.blue', 'brand.dark.yellow'),
               }}>
               Criar conta
             </Button>
@@ -194,12 +194,12 @@ import { MdAccessibility } from 'react-icons/md';
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('gray.500', 'gray.1000') }}>
+        _hover={{ bg: useColorModeValue('gray.200', 'gray.1000') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: useColorModeValue('black', 'yellow.1000') }}
+              _groupHover={{ color: useColorModeValue('brand.light.yellow', 'yellow.1000') }}
               fontWeight={500}>
               {label}
             </Text>
@@ -214,7 +214,7 @@ import { MdAccessibility } from 'react-icons/md';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'yellow.1000'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={useColorModeValue('brand.light.yellow', 'yellow.1000')} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
