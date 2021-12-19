@@ -1,4 +1,4 @@
-import { Container, Flex, Heading, Stack, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Container, Flex, Heading, Icon, Stack, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { MdRoom } from "react-icons/md";
 import  SlugFeatureDev from "./SlugFeature-dev";
 
@@ -12,8 +12,9 @@ export function SlugContainer ({ imovel }) {
     const { endereco, cidade, tipo, codigo, carousel } = imovel.fields
     return (
         <>
+        
         <Container
-          maxWidth={'7x1'} 
+          maxWidth={'8xl'} 
           mx="auto"
           px={{ base: '0', lg: '12'}}
           py={{ base: '0', lg: '12'}}
@@ -21,6 +22,7 @@ export function SlugContainer ({ imovel }) {
           bg={bgColor[colorMode]}
           color={color[colorMode]}
           >
+            
             <SlugFeatureDev 
               feature='2 quartos' 
               description="*Descrição mais detalhada sobre a característica*"

@@ -48,6 +48,7 @@ export default function SlugCarousel({ imovel }) {
 
   return (
       <>
+      
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"

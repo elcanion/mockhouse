@@ -76,6 +76,9 @@ import { MdAccessibility } from 'react-icons/md';
              logo
             </Text>
   */}
+          <Link href='/'>
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}
+            alignItems={'center'}>
             <Unamed 
               color={useColorModeValue('black', 'white')}
               padding={0}
@@ -84,6 +87,9 @@ import { MdAccessibility } from 'react-icons/md';
               width={20}
               position={'absolute'}
               />
+            </Flex>
+          </Link>
+
             <Flex display={{ base: 'none', md: 'flex' }} pl={'28'}>
               <DesktopNav />
             </Flex>
@@ -149,6 +155,7 @@ import { MdAccessibility } from 'react-icons/md';
               <PopoverTrigger>
                 <Link
                   p={2}
+                  marginRight={5}
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}

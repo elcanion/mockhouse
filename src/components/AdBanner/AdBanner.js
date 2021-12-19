@@ -44,24 +44,31 @@ import AdCarousel from './AdCarousel';
               >
                 {//<AdComment imovel={imovel}/>
                 }
-              {<Button
-                //rounded={'full'}
-                size={'lg'}
-                fontWeight={600}
-                px={6}
-                //color={'white'}
-                //bg={'yellow.1000'}
-                bg={'none'}
-                //bg={useColorModeValue('white', 'black')}
-                color={useColorModeValue('black', 'white')}
-                borderWidth={'2px'}
-                borderColor={useColorModeValue('black', 'white')}
-                borderRadius={'none'}
-                colorScheme={'yellow'}
-                _hover={{ bg: useColorModeValue('brand.light.yellow', 'brand.dark.yellow'), color: 'black', border:'none'}}>
-                  <Link href={'/imovel/' + slug}>Ver mais</Link>
-                
-              </Button>
+              {<Link 
+                href={'/imovel/' + slug}
+                >
+                  <Button
+                  //rounded={'full'}
+                  size={'lg'}
+                  fontWeight={600}
+                  px={6}
+                  //color={'white'}
+                  //bg={'yellow.1000'}
+                  bg={'none'}
+                  //bg={useColorModeValue('white', 'black')}
+                  color={useColorModeValue('black', 'white')}
+                  borderWidth={'2px'}
+                  borderColor={useColorModeValue('black', 'white')}
+                  borderRadius={'none'}
+                  colorScheme={'yellow'}
+                  _hover={{ 
+                    bg: useColorModeValue('brand.light.yellow', 'brand.dark.yellow'), 
+                    color: 'black', 
+                    borderColor: useColorModeValue('brand.light.yellow', 'brand.dark.yellow'),
+                    }}>
+                    Ver detalhes
+                </Button>
+              </Link>
               }
             </Stack>
             }

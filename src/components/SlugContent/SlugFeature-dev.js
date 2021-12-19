@@ -12,12 +12,14 @@ import {
     createIcon,
     IconProps,
     useColorModeValue,
+    Divider,
   } from '@chakra-ui/react';
 import SlugCarousel from './SlugCarousel';
   
   export default function SlugFeatureDev({ feature, description, imovel }) {
     return (
       <Container maxW={'7xl'}>
+        
         <Stack
           align={'center'}
           spacing={{ base: 8, md: 10 }}
@@ -42,30 +44,12 @@ import SlugCarousel from './SlugCarousel';
                 >
               { description }
             </Text>
-            {/*
-                <Stack
-              spacing={{ base: 4, sm: 6 }}
-              direction={{ base: 'column', sm: 'row' }}>
-              <Button
-                rounded={'full'}
-                size={'lg'}
-                fontWeight={'normal'}
-                px={6}
-                colorScheme={'red'}
-                bg={'red.400'}
-                _hover={{ bg: 'red.500' }}>
-                Get started
-              </Button>
-              <Button
-                rounded={'full'}
-                size={'lg'}
-                fontWeight={'normal'}
-                px={6}
-                leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
-                How It Works
-              </Button>
-            </Stack>
-            */}
+            <Divider 
+                variant={'solid'} 
+                opacity={1} 
+                borderColor={useColorModeValue('brand.light.black', 'brand.dark.yellow')} 
+                height={0} 
+                borderBottomWidth={2}/>
           </Stack>
           <Flex
             flex={1}

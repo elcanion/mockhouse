@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import { Box, Divider, Flex, Heading, Stack, Text, useColorModeValue } from "@chakra-ui/react"
 import { MdRoom } from "react-icons/md"
 
 export const AdHeading = ({imovel}) => {
@@ -43,6 +43,12 @@ export const AdHeading = ({imovel}) => {
               fontSize={{ base: '2xl', sm: '3xl', lg: '5xl' }}>
                 {endereco}
               </Text>
+              <Divider 
+                variant={'solid'} 
+                opacity={1} 
+                borderColor={useColorModeValue('brand.light.black', 'brand.dark.yellow')} 
+                height={3} 
+                borderBottomWidth={2}/>
             </Heading>
         </>
     )
