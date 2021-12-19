@@ -1,38 +1,32 @@
-import { Box, ChakraProvider, ColorModeProvider, cookieStorageManager, localStorageManager } from '@chakra-ui/react'
+import { Box, chakra, ChakraProvider, ColorModeProvider, cookieStorageManager, localStorageManager } from '@chakra-ui/react'
+import { ThemeProvider } from 'next-themes'
 import { Layout } from '../src/components/Layout'
 import theme from '../src/theme'
 
 
 
 function MyApp({ Component, pageProps, cookies }) {
-  const colorModeManager = cookies === 'string'
-                          ? cookieStorageManager(cookies)
-                          : localStorageManager
 
   return (
     <>
-    <ChakraProvider resetCSS theme={theme}>
+    <ChakraProvider resetCSS theme={theme} >
+      <ThemeProvider theme={theme}>
       <ColorModeProvider
         options={{
           //useSystemColorMode: true,
         }}
         
       >
+        
           <Layout>
             <Component {...pageProps} />
           </Layout>
       </ColorModeProvider>
+      </ThemeProvider>
     </ChakraProvider>
     </>
   )
 }
 
-export function getServerSideProps({ req }) {
-  return {
-    props: {
-      cookies: req.headers.cookie ?? '',
-    }
-  }
-}
 
 export default MyApp
