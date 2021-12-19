@@ -22,7 +22,18 @@ export function SlugContainer ({ imovel }) {
           bg={bgColor[colorMode]}
           color={color[colorMode]}
           >
-            
+            <Stack direction={'row'} 
+              align={'center'}
+              >
+                <MdRoom/>
+                <Text>{cidade}</Text>
+                <Text 
+                  pl={5}
+                  color={useColorModeValue('brand.light.yellow', 'brand.dark.yellow')}
+                >
+                  Código {codigo}
+                </Text>
+            </Stack>
             <SlugFeatureDev 
               feature='2 quartos' 
               description="*Descrição mais detalhada sobre a característica*"

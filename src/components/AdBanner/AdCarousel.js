@@ -48,7 +48,7 @@ export default function CaptionCarousel({ imovel }) {
 
   return (
       <>
-    {
+    {/*
      <Blob
       w={'120%'}
       h={'120%'}
@@ -58,7 +58,7 @@ export default function CaptionCarousel({ imovel }) {
       zIndex={0}
       color={useColorModeValue('brand.light.yellow', 'brand.dark.yellow')}
       />
-    }
+    */}
   
     <Container
       position={'relative'}

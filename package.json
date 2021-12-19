@@ -24,6 +24,7 @@
             "contentful": "^9.1.5",
             "embla-carousel-react": "^6.0.2",
             "framer-motion": "^4.0.3",
+            "gsap": "^3.9.0",
             "next": "latest",
             "next-themes": "^0.0.15",
             "react": "^17.0.2",
