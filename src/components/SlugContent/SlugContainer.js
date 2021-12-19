@@ -1,6 +1,5 @@
 import { Container, Flex, Heading, Stack, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { MdRoom } from "react-icons/md";
-import { SlugFeature } from "./SlugFeature";
 import  SlugFeatureDev from "./SlugFeature-dev";
 
 export function SlugContainer ({ imovel }) {
