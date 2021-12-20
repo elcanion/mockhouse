@@ -112,7 +112,7 @@ import { MdAccessibility } from 'react-icons/md';
               borderColor={useColorModeValue('black', 'gray.200')}
               color={useColorModeValue('black', 'gray.200')}
               variant={'link'}
-              href={'#'}>
+              href={'login'}>
               Entrar
             </Button>
             <Button

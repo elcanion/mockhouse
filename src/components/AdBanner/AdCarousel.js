@@ -62,7 +62,7 @@ export default function CaptionCarousel({ imovel }) {
   
     <Container
       position={'relative'}
-      rounded={'20'}
+      //rounded={'20'}
       //height={{base: '500px', medium: '200px', small: '200px'}}
       //width={'100%'}
       //overflow={'hidden'}
