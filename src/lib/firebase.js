@@ -4,7 +4,7 @@ import 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyArnvEKwGNxEhLaq0wC_WB7VPi4t1kIIAg", 
-    authDomain: "siad-69fc4.firebaseapp.com",  
+    authDomain: "si-re.vercel.app",  
     projectId: "siad-69fc4",  
     storageBucket: "siad-69fc4.appspot.com",  
     messagingSenderId: "1059746105248",  
