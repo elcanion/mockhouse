@@ -6,7 +6,7 @@ export const Footer = (props) =>
     as="footer"
     mx={'auto'}
     py="10px"
-    px="10px" 
+    px="10px"
     justifyContent={'flex-end'}
     alignItems={'center'}
     bgColor={useColorModeValue('white', 'black')}

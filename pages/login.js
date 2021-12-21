@@ -4,13 +4,15 @@ import { useRouter } from 'next/router';
 import { createContext, useContext, useEffect, useState } from 'react';
 import { firebase, auth } from '../src/lib/firebase';
 import { signOut } from 'firebase/auth';
+import { useAuth } from '../src/components/Auth/AuthContext';
+
+
 const AuthContext = createContext();
-
-
 
 const Login = () => {
     //const [phoneNumber, setnumber] = useState('');
     const router = useRouter();
+    const { currentUser, setCurrentUser } = useAuth();
 
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
@@ -27,10 +29,10 @@ const Login = () => {
 
     const signin = () => {
         if (phoneNumber === "" || phoneNumber.length < 10) return ;
-        let verify = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+        let verify = new firebase.auth.RecaptchaVerifier('recaptcha-container', {'size': 'invisible'});
         auth.signInWithPhoneNumber(phoneNumber, verify).then((result) => {
             setfinal(result);
-            alert('code sent', verify)
+            alert('code sent')
             setshow(true);
         })
             .catch((err) => {
@@ -44,6 +46,8 @@ const Login = () => {
             return;
         final.confirm(otp).then((result) => {
             alert("it worked!")
+            //const user = result.user;
+            setCurrentUser(result.user);
             router.push('/')
         }).catch((err) => {
             alert("Wrong code");
@@ -53,7 +57,7 @@ const Login = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             localStorage.setItem('phoneNumber', user?.phoneNumber);
-            
+            console.log("phoneNumber: " + user?.phoneNumber)
         });
         return () => {
             unsubscribe();

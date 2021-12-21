@@ -31,6 +31,8 @@ import { Unamed } from './logo';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { MdAccessibility } from 'react-icons/md';
 import { useAuth } from './Auth/AuthContext'
+import Router from 'next/router';
+
 
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -104,23 +106,8 @@ import { useAuth } from './Auth/AuthContext'
             direction={'row'}
             spacing={6}>
 
-            {
-            !currentUser &&
-            <Button
-              as={'a'}
-              fontSize={'sm'}
-              p={2}
-              fontWeight={500}
-              borderRadius={'none'}
-              borderWidth={'1px'}
-              borderColor={useColorModeValue('black', 'gray.200')}
-              color={useColorModeValue('black', 'gray.200')}
-              variant={'link'}
-              onClick={() => logout()}>
-              Sair ({currentUser?.displayName})
-            </Button>
-            }
-            
+              {console.log(currentUser)}
+
             {
             currentUser &&
             <Button
@@ -133,7 +120,26 @@ import { useAuth } from './Auth/AuthContext'
               borderColor={useColorModeValue('black', 'gray.200')}
               color={useColorModeValue('black', 'gray.200')}
               variant={'link'}
-              href={'login'}>
+              onClick={() => logout()}>
+              Sair ({currentUser?.phoneNumber})
+            </Button>
+            }
+            
+            {
+            !currentUser &&
+            <Button
+              as={'a'}
+              fontSize={'sm'}
+              p={2}
+              fontWeight={500}
+              borderRadius={'none'}
+              borderWidth={'1px'}
+              borderColor={useColorModeValue('black', 'gray.200')}
+              color={useColorModeValue('black', 'gray.200')}
+              variant={'link'}
+              href={'login'}
+              //onClick={() => login()}
+              >
               Entrar
             </Button>
             }

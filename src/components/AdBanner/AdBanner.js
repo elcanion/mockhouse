@@ -18,10 +18,12 @@ import { AdComment } from './AdComment';
 import { AdHeading } from './AdHeading';
 import AdCarousel from './AdCarousel';
 import { FavouriteButton } from './FavouriteButton';
+import { useAuth } from '../Auth/AuthContext';
 //import Link from 'next/link';
   
   export default function AdBanner({ imovel }) {
     const { cidade, carousel, slug, tipo } = imovel.fields
+    const { currentUser, logout } = useAuth();
     return (
       //<Container maxW={'5x1'}>
       <Container
@@ -44,6 +46,7 @@ import { FavouriteButton } from './FavouriteButton';
               align={'center'}
               >
                 {//<AdComment imovel={imovel}/>
+                currentUser && 
                 <FavouriteButton
                 //bg={useColorModeValue('brand.light.yellow')}
                 aria-label={`Add ${tipo} ${cidade} to your favourites`}
