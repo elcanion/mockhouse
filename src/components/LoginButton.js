@@ -1,4 +1,4 @@
-import { useColorModeValue } from "@chakra-ui/react";
+import { Button, useColorModeValue } from "@chakra-ui/react";
 import { useAuth } from "./Auth/AuthContext";
 
 export const LogoutButton = () => {
