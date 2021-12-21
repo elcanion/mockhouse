@@ -9,6 +9,7 @@ export const FooterDev = (props) => (
     as="footer"
     role="contentinfo"
     mx="auto"
+    //position={"absolute"}
     //maxW="7xl"
     py="4"
     px={{ base: 4, md: '8' }}

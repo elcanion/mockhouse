@@ -30,9 +30,11 @@ import { ContrastSwitch } from './ContrastSwitch';
 import { Unamed } from './logo';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { MdAccessibility } from 'react-icons/md';
+import { useAuth } from './Auth/AuthContext'
 
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
+    const { currentUser, logout } = useAuth();
   
     return (
       <nav>
@@ -101,7 +103,26 @@ import { MdAccessibility } from 'react-icons/md';
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+
+            {
+            !currentUser &&
+            <Button
+              as={'a'}
+              fontSize={'sm'}
+              p={2}
+              fontWeight={500}
+              borderRadius={'none'}
+              borderWidth={'1px'}
+              borderColor={useColorModeValue('black', 'gray.200')}
+              color={useColorModeValue('black', 'gray.200')}
+              variant={'link'}
+              onClick={() => logout()}>
+              Sair ({currentUser?.displayName})
+            </Button>
+            }
             
+            {
+            currentUser &&
             <Button
               as={'a'}
               fontSize={'sm'}
@@ -115,7 +136,10 @@ import { MdAccessibility } from 'react-icons/md';
               href={'login'}>
               Entrar
             </Button>
-            <Button
+            }
+
+            {/*
+              <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
@@ -128,6 +152,7 @@ import { MdAccessibility } from 'react-icons/md';
               }}>
               Criar conta
             </Button>
+            */}
             <AccessibilityNav />
             <MobileAccessibilityNav />
           </Stack>

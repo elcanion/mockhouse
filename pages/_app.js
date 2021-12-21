@@ -1,6 +1,7 @@
 import { Box, chakra, ChakraProvider, ColorModeProvider, cookieStorageManager, localStorageManager } from '@chakra-ui/react'
 import { ThemeProvider } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { AuthContextProvider } from '../src/components/Auth/AuthContext'
 import { Layout } from '../src/components/Layout'
 import theme from '../src/theme'
 
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps, cookies }) {
   if (!mounted) return null
   return (
     <>
+    <AuthContextProvider>
     <ChakraProvider resetCSS theme={theme}>
       
       <ColorModeProvider
@@ -28,6 +30,7 @@ function MyApp({ Component, pageProps, cookies }) {
       </ColorModeProvider>
       
     </ChakraProvider>
+    </AuthContextProvider>
     </>
   )
 }

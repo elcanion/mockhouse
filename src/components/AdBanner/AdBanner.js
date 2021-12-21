@@ -17,10 +17,11 @@ import {
 import { AdComment } from './AdComment';
 import { AdHeading } from './AdHeading';
 import AdCarousel from './AdCarousel';
+import { FavouriteButton } from './FavouriteButton';
 //import Link from 'next/link';
   
   export default function AdBanner({ imovel }) {
-    const { cidade, carousel, slug } = imovel.fields
+    const { cidade, carousel, slug, tipo } = imovel.fields
     return (
       //<Container maxW={'5x1'}>
       <Container
@@ -43,6 +44,10 @@ import AdCarousel from './AdCarousel';
               align={'center'}
               >
                 {//<AdComment imovel={imovel}/>
+                <FavouriteButton
+                //bg={useColorModeValue('brand.light.yellow')}
+                aria-label={`Add ${tipo} ${cidade} to your favourites`}
+                />
                 }
               {<Link 
                 href={'/imovel/' + slug}
@@ -83,6 +88,7 @@ import AdCarousel from './AdCarousel';
             >
               {<AdCarousel imovel={imovel}/>
               }
+                
           </Flex>
             }
         </Stack>

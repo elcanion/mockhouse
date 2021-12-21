@@ -1,11 +1,16 @@
 import { Box, Button, Container, Input, InputGroup, InputLeftAddon, Stack, useColorModeValue } from '@chakra-ui/react';
-import { useState } from 'react';
-import { MdAirlineSeatIndividualSuite } from 'react-icons/md';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useRouter } from 'next/router';
+import { createContext, useContext, useEffect, useState } from 'react';
 import { firebase, auth } from '../src/lib/firebase';
+import { signOut } from 'firebase/auth';
+const AuthContext = createContext();
+
 
 
 const Login = () => {
     //const [phoneNumber, setnumber] = useState('');
+    const router = useRouter();
 
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
@@ -18,6 +23,7 @@ const Login = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
     const handlePhoneChange = (event) => setPhoneNumber(event.target.value)
     const handleVerifyChange = (event) => setotp(event.target.value)
+
 
     const signin = () => {
         if (phoneNumber === "" || phoneNumber.length < 10) return ;
@@ -38,10 +44,21 @@ const Login = () => {
             return;
         final.confirm(otp).then((result) => {
             alert("it worked!")
+            router.push('/')
         }).catch((err) => {
             alert("Wrong code");
         })
     }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            localStorage.setItem('phoneNumber', user?.phoneNumber);
+            
+        });
+        return () => {
+            unsubscribe();
+        }
+    }, []);
 
     return (
         <Container>
@@ -49,6 +66,7 @@ const Login = () => {
                 spacing={4} 
                 display={!show ? "block" : "none"}
                 mx={'auto'}
+                height={'79vh'}
                 maxW={'lg'}
                 py={12}
                 px={6}                
@@ -90,7 +108,6 @@ const Login = () => {
                         value={otp}
                         onChange={handleVerifyChange}/>
                 </InputGroup>
-                <div id="recaptcha-container"></div>
                 <Button onClick={ValidateOtp}>Verificar</Button>
             </Stack>
         </Container>
