@@ -32,6 +32,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { MdAccessibility } from 'react-icons/md';
 import { useAuth } from './Auth/AuthContext'
 import Router from 'next/router';
+import { LoginButton, LogoutButton } from './LoginButton';
 
 
   export default function WithSubnavigation() {
@@ -110,38 +111,12 @@ import Router from 'next/router';
 
             {
             currentUser &&
-            <Button
-              as={'a'}
-              fontSize={'sm'}
-              p={2}
-              fontWeight={500}
-              borderRadius={'none'}
-              borderWidth={'1px'}
-              borderColor={useColorModeValue('black', 'gray.200')}
-              color={useColorModeValue('black', 'gray.200')}
-              variant={'link'}
-              onClick={() => logout()}>
-              Sair ({currentUser?.phoneNumber})
-            </Button>
+            <LogoutButton/>
             }
             
             {
             !currentUser &&
-            <Button
-              as={'a'}
-              fontSize={'sm'}
-              p={2}
-              fontWeight={500}
-              borderRadius={'none'}
-              borderWidth={'1px'}
-              borderColor={useColorModeValue('black', 'gray.200')}
-              color={useColorModeValue('black', 'gray.200')}
-              variant={'link'}
-              href={'login'}
-              //onClick={() => login()}
-              >
-              Entrar
-            </Button>
+            <LoginButton />
             }
 
             {/*
