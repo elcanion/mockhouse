@@ -1,4 +1,4 @@
-import { Button, Container, Input, InputGroup, InputLeftAddon, Stack } from '@chakra-ui/react';
+import { Box, Button, Container, Input, InputGroup, InputLeftAddon, Stack, useColorModeValue } from '@chakra-ui/react';
 import { useState } from 'react';
 import { MdAirlineSeatIndividualSuite } from 'react-icons/md';
 import { firebase, auth } from '../src/lib/firebase';
@@ -6,6 +6,11 @@ import { firebase, auth } from '../src/lib/firebase';
 
 const Login = () => {
     //const [phoneNumber, setnumber] = useState('');
+
+    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkHoverColor = useColorModeValue('gray.800', 'white');
+    const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+
     const [otp, setotp] = useState('');
     const [show, setshow] = useState(false);
     const [final, setfinal] = useState('');
@@ -40,17 +45,42 @@ const Login = () => {
 
     return (
         <Container>
-            <Stack spacing={4} display={!show ? "block" : "none"}>
+            <Stack 
+                spacing={4} 
+                display={!show ? "block" : "none"}
+                mx={'auto'}
+                maxW={'lg'}
+                py={12}
+                px={6}                
+                >
+                <Box
+                    rounded={'lg'}
+                    bg={useColorModeValue('white', 'black')}
+                    boxShadow={'lg'}
+                    p={8}
+                    >
+                    <Stack spacing={4}>
+                        
                 <InputGroup>
-                    <InputLeftAddon children='+55' />
+                    
                     <Input 
                         type='tel'
                         value={phoneNumber}
                         onChange={handlePhoneChange}
+                        color={useColorModeValue('black', 'white')}
                         placeholder="Número de telefone" />
                 </InputGroup>
                 <div id="recaptcha-container"></div>
-                <Button onClick={signin}>Enviar código de verificação</Button>
+                <Button 
+                    onClick={signin}
+                    color={linkColor}
+                    _hover={{
+                        textDecoration: 'none',
+                        color: linkHoverColor,
+                    }}
+                    >Enviar código de verificação</Button>
+                    </Stack>
+                </Box>
             </Stack>
             <Stack spacing={4} display={show ? "block" : "none"}>
             <InputGroup>
@@ -63,24 +93,6 @@ const Login = () => {
                 <div id="recaptcha-container"></div>
                 <Button onClick={ValidateOtp}>Verificar</Button>
             </Stack>
-            {/*
-            <center>
-                <div style={{ display: !show ? "block" : "none" }}>
-                    <input value={phoneNumber} onChange={(e) => { 
-                       setnumber(e.target.value) }}
-                        placeholder="phone number" />
-                    <br /><br />
-                    <div id="recaptcha-container"></div>
-                    <button onClick={signin}>Send OTP</button>
-                </div>
-                <div style={{ display: show ? "block" : "none" }}>
-                    <input type="text" placeholder={"Enter your OTP"}
-                        onChange={(e) => { setotp(e.target.value) }}></input>
-                    <br /><br />
-                    <button onClick={ValidateOtp}>Verify</button>
-                </div>
-            </center>
-                    */}
         </Container>
     );
 }
