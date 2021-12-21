@@ -9,6 +9,10 @@ import { FooterDev } from './Footer/Footer-dev'
 export function Layout ({ children }) {
     return (
         <>
+        <Flex
+            minHeight={'100vh'}
+            flexDirection={'column'}
+            >
             <WithSubnavigation />
                 <Box
                     backgroundColor={useColorModeValue('white', 'brand.dark.gray')}
@@ -17,6 +21,7 @@ export function Layout ({ children }) {
                 </Box>
                 
             <FooterDev />
+        </Flex>
         </>
     )
 }

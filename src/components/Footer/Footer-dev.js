@@ -9,10 +9,12 @@ export const FooterDev = (props) => (
     as="footer"
     role="contentinfo"
     mx="auto"
+    marginTop={"auto"}
+    width={'95vw'}
     //position={"absolute"}
     //maxW="7xl"
     py="4"
-    px={{ base: 4, md: '8' }}
+    //px={{ base: 4, md: '8' }}
     color={useColorModeValue('black', 'white')}
     bgColor={useColorModeValue('white', 'black')}
     borderTopWidth={'1px'}
