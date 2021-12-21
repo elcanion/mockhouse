@@ -1,5 +1,5 @@
 import { AdContainer } from './AdContainer'
-import WithSubnavigation from './Navbar-dev'
+import WithSubnavigation from './Navbar-dev-2'
 import AdBanner from './AdBanner/AdBanner'
 import { Footer } from './Footer/Footer'
 import { Box, Button, Container, Flex, useColorModeValue } from '@chakra-ui/react'
@@ -12,15 +12,20 @@ export function Layout ({ children }) {
         <Flex
             minHeight={'100vh'}
             flexDirection={'column'}
+            //marginX={'auto'}
+            marginY={0}
             >
+            {//<WithSubnavigation />
+            }
             <WithSubnavigation />
-                <Box
+                {<Box
                     backgroundColor={useColorModeValue('white', 'brand.dark.gray')}
                     >
                     { children }
                 </Box>
-                
-            <FooterDev />
+                }
+            {<FooterDev />
+            }
         </Flex>
         </>
     )

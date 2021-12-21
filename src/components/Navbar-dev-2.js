@@ -14,9 +14,6 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-    MenuButton,
-    Image,
-    Menu,
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -24,97 +21,64 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-import { DarkModeSwitch } from './DarkModeSwitch';
-import { AccessibilityMenu, MobileAccessibilityMenu } from './AccessibilityMenu';
-import { ContrastSwitch } from './ContrastSwitch';
-import { Unamed } from './logo';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { MdAccessibility } from 'react-icons/md';
-import { useAuth } from './Auth/AuthContext'
-import Router from 'next/router';
+import { useAuth } from './Auth/AuthContext';
 import { LoginButton, LogoutButton } from './LoginButton';
-
-
+import { Unamed } from './logo';
+import { DarkModeSwitch } from './DarkModeSwitch';
+import { MdAccessibility } from 'react-icons/md';
+  
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
     const { currentUser, logout } = useAuth();
   
+  
     return (
-      <nav>
-      
+      <Box>
         <Flex
-          bg={useColorModeValue('white', 'black')}
-          color={useColorModeValue('black', 'white')}
+          bg={useColorModeValue('white', 'gray.800')}
+          color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
-          justifyContent={'flex-end'}
-          //padding={'10px 0'}
-          //alignItems={'flex-end'}
           py={{ base: 2 }}
-          //px={{ base: 4 }}
+          px={{ base: 4 }}
           borderBottom={1}
           borderStyle={'solid'}
           borderColor={useColorModeValue('gray.200', 'gray.900')}
-          align={'center'}
-          >
+          align={'center'}>
           <Flex
-            //flex={{ base: 1, md: 'auto' }}
-            //ml={{ base: -2 }}
-            display={{ base: 'flex', md: 'none' }}
-            >
+            flex={{ base: 1, md: 'auto' }}
+            ml={{ base: -2 }}
+            display={{ base: 'flex', md: 'none' }}>
             <IconButton
               onClick={onToggle}
-              fontSize={'20px'}
               icon={
-                //isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-                isOpen ? <FaTimes 
-                        /> : <FaBars />
+                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
               }
               variant={'ghost'}
-              color={useColorModeValue('black', 'white')}
-              borderColor={useColorModeValue('black', 'white')}
-              borderWidth={'1px'}
-              borderRadius={'none'}
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}
-          alignItems={'center'}>
-            {/*<Text
-              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-              fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
-             logo
-            </Text>
-  */}
-          <Link href='/'>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}
-            alignItems={'center'}>
-            <Unamed 
-              color={useColorModeValue('black', 'white')}
-              padding={0}
-              margin={0}
-              height={20}
-              width={20}
-              position={'absolute'}
-              />
-            </Flex>
-
-          </Link>
-
-            <Flex display={{ base: 'none', md: 'flex' }} pl={'28'}>
+          <Flex 
+            flex={{ base: 1 }} 
+            justify={{ base: 'center', md: 'start' }}
+            //alignItems={'center'}
+            >
+          <Text
+            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+            fontFamily={'heading'}
+            color={useColorModeValue('gray.800', 'white')}>
+            ******
+          </Text>
+  
+            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
   
-          
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-
-              {console.log(currentUser)}
-
             {
             currentUser &&
             <LogoutButton/>
@@ -125,41 +89,24 @@ import { LoginButton, LogoutButton } from './LoginButton';
             <LoginButton />
             }
 
-            {/*
-              <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={useColorModeValue('white', 'brand.dark.gray')}
-              bg={useColorModeValue('brand.light.blue', 'brand.dark.yellow')}
-              borderRadius={'none'}
-              href={'#'}
-              _hover={{
-                bg: useColorModeValue('brand.light.blue', 'brand.dark.yellow'),
-              }}>
-              Criar conta
-            </Button>
-            */}
+            
             <AccessibilityNav />
-            <MobileAccessibilityNav />
           </Stack>
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
-    
-      </nav>
+      </Box>
     );
   }
   
   const DesktopNav = () => {
-    const linkColor = useColorModeValue('black', 'gray.200');
+    const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-    <>
       <Stack direction={'row'} spacing={4}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
@@ -167,12 +114,9 @@ import { LoginButton, LogoutButton } from './LoginButton';
               <PopoverTrigger>
                 <Link
                   p={2}
-                  marginRight={5}
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
-                  borderWidth={'1px'}
-                  borderColor={linkColor}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
@@ -197,11 +141,10 @@ import { LoginButton, LogoutButton } from './LoginButton';
                   </Stack>
                 </PopoverContent>
               )}
-            </Popover>            
+            </Popover>
           </Box>
-        ))}        
+        ))}
       </Stack>
-      </>
     );
   };
   
@@ -213,17 +156,16 @@ import { LoginButton, LogoutButton } from './LoginButton';
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('gray.200', 'gray.1000') }}>
+        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: useColorModeValue('brand.light.yellow', 'yellow.1000') }}
+              _groupHover={{ color: 'pink.400' }}
               fontWeight={500}>
               {label}
             </Text>
-            <Text fontSize={'sm'}
-             color={useColorModeValue('black', 'white')}>{subLabel}</Text>
+            <Text fontSize={'sm'}>{subLabel}</Text>
           </Box>
           <Flex
             transition={'all .3s ease'}
@@ -233,7 +175,7 @@ import { LoginButton, LogoutButton } from './LoginButton';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={useColorModeValue('brand.light.yellow', 'yellow.1000')} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
@@ -244,11 +186,13 @@ import { LoginButton, LogoutButton } from './LoginButton';
     return (
       <Stack
         bg={useColorModeValue('white', 'gray.800')}
-        //p={4}
+        
+        p={4}
         display={{ md: 'none' }}>
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
         ))}
+        <MobileAccessibilityNav />
       </Stack>
     );
   };
@@ -269,12 +213,13 @@ import { LoginButton, LogoutButton } from './LoginButton';
           }}>
           <Text
             fontWeight={600}
-            color={useColorModeValue('gray.600', 'gray.200')}>
+            color={useColorModeValue('black', 'white')}>
             {label}
           </Text>
           {children && (
             <Icon
               as={ChevronDownIcon}
+              color={useColorModeValue('black', 'white')}
               transition={'all .25s ease-in-out'}
               transform={isOpen ? 'rotate(180deg)' : ''}
               w={6}
@@ -289,7 +234,8 @@ import { LoginButton, LogoutButton } from './LoginButton';
             pl={4}
             borderLeft={1}
             borderStyle={'solid'}
-            borderColor={useColorModeValue('gray.200', 'gray.700')}
+            color={useColorModeValue('black', 'white')}
+            borderColor={useColorModeValue('black', 'white')}
             align={'start'}>
             {children &&
               children.map((child) => (
@@ -359,59 +305,51 @@ const MobileAccessibilityNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const { isOpen, onToggle } = useDisclosure();
   return (
-    <Stack
-        //bg={useColorModeValue('white', 'gray.800')}
-        //p={4}
-        display={{ md: 'none' }}>
-          <Box key='Accessibilidade'>
-            <Popover trigger={'hover'} placement={'bottom-start'}>
-              <PopoverTrigger>
-                <Link
-                  p={2}
-                  href={'#'}
-                  fontSize={'sm'}
-                  fontWeight={500}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
-                  }}>
-                  <IconButton
-                    //onClick={onToggle}
-                    fontSize={'20px'}
-                    icon={
-                      <MdAccessibility w={3} h={3} />
-                      //isOpen ? <FaTimes 
-                      //        /> : <FaBars />
-                    }
-                    variant={'ghost'}
-                    color={useColorModeValue('black', 'white')}
-                    borderColor={useColorModeValue('black', 'white')}
-                    borderWidth={'1px'}
-                    borderRadius={'100%'}
-                    aria-label={'Toggle Navigation'}
-                  />
-                </Link>
-              </PopoverTrigger>
+
+        <Stack spacing={4} onClick={onToggle}>
+        <Flex
+          py={2}
+          as={Link}
+          //href={href ?? '#'}
+          justify={'space-between'}
+          align={'center'}
+          _hover={{
+            textDecoration: 'none',
+          }}>
+          <Text
+            fontWeight={600}
+            color={useColorModeValue('black', 'white')}>
+            Acessibilidade
+          </Text>
+          {//children && (
+            <Icon
+              as={ChevronDownIcon}
+              color={useColorModeValue('black', 'white')}
+              transition={'all .25s ease-in-out'}
+              transform={isOpen ? 'rotate(180deg)' : ''}
+              w={6}
+              h={6}
+            />
+          //)
+          }
+        </Flex>
   
-                <PopoverContent
-                  border={0}
-                  boxShadow={'xl'}
-                  bg={popoverContentBgColor}
-                  p={4}
-                  rounded={'xl'}
-                  minW={'sm'}>
-                  <Stack>
-                    <AccessibilitySubNav />
-                  </Stack>
-                </PopoverContent>
-              
-            </Popover>
-            
-          </Box>
-        )
-        
+        <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+          <Stack
+            mt={2}
+            pl={4}
+            borderLeft={1}
+            borderStyle={'solid'}
+            color={useColorModeValue('black', 'white')}
+            borderColor={useColorModeValue('black', 'white')}
+            align={'start'}>
+            {
+                <AccessibilitySubNav />
+            }
+          </Stack>
+        </Collapse>
       </Stack>
   )
 }
