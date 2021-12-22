@@ -45,7 +45,8 @@ export function SlugContainer ({ imovel }) {
               imovel={imovel}/>
         </Container>
         
-        <SlugForm />
+        {//<SlugForm />
+        }
         </>
     )
 }
