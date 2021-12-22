@@ -57,18 +57,21 @@ import { MdAccessibility } from 'react-icons/md';
               aria-label={'Toggle Navigation'}
             />
           </Flex>
+          
           <Flex 
             flex={{ base: 1 }} 
             justify={{ base: 'center', md: 'start' }}
             //alignItems={'center'}
             >
+                <Link href='/'>
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
             ******
           </Text>
-  
+          </Link>
+          
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -79,6 +82,7 @@ import { MdAccessibility } from 'react-icons/md';
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+                {console.log(currentUser)}
             {
             currentUser &&
             <LogoutButton/>
@@ -117,6 +121,8 @@ import { MdAccessibility } from 'react-icons/md';
                   href={navItem.href ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
+                  borderWidth={'1px'}
+                  borderColor={linkColor}
                   color={linkColor}
                   _hover={{
                     textDecoration: 'none',
@@ -156,12 +162,12 @@ import { MdAccessibility } from 'react-icons/md';
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+        _hover={{ bg: useColorModeValue('gray.200', 'gray.1000') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
+              _groupHover={{ color: useColorModeValue('brand.light.yellow', 'yellow.1000') }}
               fontWeight={500}>
               {label}
             </Text>
@@ -175,7 +181,7 @@ import { MdAccessibility } from 'react-icons/md';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={useColorModeValue('brand.light.yellow', 'yellow.1000')} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>

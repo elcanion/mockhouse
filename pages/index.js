@@ -6,6 +6,7 @@ import { AdContainer } from '../src/components/AdContainer'
 import AdBanner from '../src/components/AdBanner/AdBanner'
 import { Hero } from '../src/components/Hero'
 import { Button } from '@chakra-ui/react'
+import { HeroBanner } from '../src/components/HeroBanner2/HeroBanner'
 
 export async function getServerSideProps() {
 
@@ -39,13 +40,16 @@ const Index = ({imoveis}) => {
         <meta name="keywords" content="imobiliaria" />
       </Head>
       
-      <Hero />
-      <AdContainer>
-        
-          {
+      {//<Hero />
+      }
+      {<HeroBanner />
+      }
+      {<AdContainer>
+        {
             imoveis.map(imovel => <AdBanner key={imovel.sys.id} imovel={imovel} />)
           }
         </AdContainer>
+        }
   
     </>
   )

@@ -18,6 +18,7 @@ import SlugCarousel from './SlugCarousel';
   
   export default function SlugFeatureDev({ feature, description, imovel }) {
     return (
+      <>
       <Container maxW={'7xl'}>
         
         <Stack
@@ -102,6 +103,8 @@ import SlugCarousel from './SlugCarousel';
           </Flex>
         </Stack>
       </Container>
+
+      </>
     );
   }
   

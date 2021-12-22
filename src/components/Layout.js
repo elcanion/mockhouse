@@ -5,6 +5,7 @@ import { Footer } from './Footer/Footer'
 import { Box, Button, Container, Flex, useColorModeValue } from '@chakra-ui/react'
 import Link from 'next/link'
 import { FooterDev } from './Footer/Footer-dev'
+import SmallWithLogoLeft from './Footer/Footer-dev-2'
 
 export function Layout ({ children }) {
     return (
@@ -24,7 +25,7 @@ export function Layout ({ children }) {
                     { children }
                 </Box>
                 }
-            {<FooterDev />
+            {<SmallWithLogoLeft />
             }
         </Flex>
         </>

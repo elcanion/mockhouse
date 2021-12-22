@@ -32,7 +32,7 @@ const Login = () => {
         let verify = new firebase.auth.RecaptchaVerifier('recaptcha-container', {'size': 'invisible'});
         auth.signInWithPhoneNumber(phoneNumber, verify).then((result) => {
             setfinal(result);
-            alert('code sent')
+            //alert('code sent')
             setshow(true);
         })
             .catch((err) => {
@@ -45,7 +45,7 @@ const Login = () => {
         if (otp === null || final === null)
             return;
         final.confirm(otp).then((result) => {
-            alert("it worked!")
+            //alert("it worked!")
             //const user = result.user;
             setCurrentUser(result.user);
             router.push('/')

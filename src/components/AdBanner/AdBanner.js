@@ -45,13 +45,7 @@ import { useAuth } from '../Auth/AuthContext';
               direction={{ base: 'column', sm: 'row' }}
               align={'center'}
               >
-                {//<AdComment imovel={imovel}/>
-                currentUser && 
-                <FavouriteButton
-                //bg={useColorModeValue('brand.light.yellow')}
-                aria-label={`Add ${tipo} ${cidade} to your favourites`}
-                />
-                }
+                
               {<Link 
                 href={'/imovel/' + slug}
                 >
