@@ -32,7 +32,7 @@ export const LoginButton = () => {
               borderColor={useColorModeValue('black', 'gray.200')}
               color={useColorModeValue('black', 'gray.200')}
               variant={'link'}
-              href={'login'}
+              href={'entrar'}
               //onClick={() => login()}
               >
               Entrar

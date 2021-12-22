@@ -2,6 +2,7 @@ import { Container, Flex, Heading, Icon, Stack, Text, useColorMode, useColorMode
 import { MdRoom } from "react-icons/md";
 import  SlugFeatureDev from "./SlugFeature-dev";
 import SlugForm from "./SlugForm";
+import { SlugProperties } from "./SlugProperties";
 
 export function SlugContainer ({ imovel }) {
     const { colorMode } = useColorMode()
@@ -44,7 +45,7 @@ export function SlugContainer ({ imovel }) {
               description="*Descrição mais detalhada sobre a característica*"
               imovel={imovel}/>
         </Container>
-        
+        <SlugProperties imovel={imovel}/>
         {<SlugForm />
         }
         </>

@@ -18,7 +18,7 @@ import {
   export const HeroBanner = ({ title }) => (
     <Box 
       maxW="100%vw" 
-      mx="auto" 
+      //mx="auto" 
       px={{ base: '0', lg: '12' }} 
       py={{ base: '0', lg: '12' }}
       marginBottom={{ base: '-28', lg: '0'}}
@@ -32,7 +32,9 @@ import {
           width={{ lg: 'sm' }}
           transform={{ base: 'translateY(-50%)', lg: 'none' }}
           bg={{ base: useColorModeValue('white', 'black'), lg: 'transparent' }}
-          mx={{ base: '6', md: '8', lg: '0' }}
+          //mx={{ base: '6', md: '8', lg: '0' }}
+          
+           mx={{ base: '20'}}
           px={{ base: '6', md: '8', lg: '0' }}
           py={{ base: '6', md: '8', lg: '12' }}
         >

@@ -8,7 +8,7 @@ import {
     useColorModeValue,
     VisuallyHidden,
   } from '@chakra-ui/react';
-  import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+  import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { ReactNode } from 'react';
 import { Unamed } from '../logo';
   
@@ -88,13 +88,13 @@ import { Unamed } from '../logo';
               />
           <Text>2021 *****.</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'#'}>
-              <FaTwitter />
+            <SocialButton label={'Facebook'} href={'https://www.facebook.com/SISOLUCOESIMOBILIARIAS'}>
+              <FaFacebook />
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'#'}>
+            <SocialButton label={'YouTube'} href={'https://www.youtube.com/channel/UC2yQ0jnlQ52w4Tvx9OeZwTw'}>
               <FaYoutube />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'#'}>
+            <SocialButton label={'Instagram'} href={'https://www.instagram.com/si.solucoes.imobiliarias/'}>
               <FaInstagram />
             </SocialButton>
           </Stack>

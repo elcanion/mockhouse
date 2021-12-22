@@ -47,6 +47,7 @@ const Index = ({imoveis}) => {
       {<AdContainer>
         {
             imoveis.map(imovel => <AdBanner key={imovel.sys.id} imovel={imovel} />)
+            //imoveis.map(imovel => {console.log(imovel.fields.lavabos)})
           }
         </AdContainer>
         }

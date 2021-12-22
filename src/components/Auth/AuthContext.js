@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
-import Login from '../../../pages/login';
+import Login from '../../../pages/entrar';
 import { Router, useRouter } from 'next/router';
 
 const AuthContext = createContext();

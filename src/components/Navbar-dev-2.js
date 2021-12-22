@@ -64,15 +64,28 @@ import { MdAccessibility } from 'react-icons/md';
             //alignItems={'center'}
             >
                 <Link href='/'>
-          <Text
+          {/*<Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
             ******
           </Text>
+          */}
+          <Unamed 
+              color={useColorModeValue('black', 'white')}
+              //padding={0}
+              marginLeft={{ base: -10, md: 0}}
+              
+              top={-3}
+              height={20}
+              width={20}
+              position={'absolute'}
+              />
           </Link>
           
-            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+            <Flex display={{ base: 'none', md: 'flex' }} 
+                    ml={{ md: '100px'}}
+                    >
               <DesktopNav />
             </Flex>
           </Flex>
@@ -376,13 +389,13 @@ const MobileAccessibilityNav = () => {
       label: 'Contatos',
       children: [
         {
-          label: 'Ada Lovelace',
-          subLabel: 'Converse com Ada via Whatsapp',
+          label: 'Contato #1',
+          subLabel: 'Converse com #1 via Whatsapp',
           href: '#',
         },
         {
-            label: 'Albert Einstein',
-            subLabel: 'Converse com Albert via Whatsapp',
+            label: 'Contato #2',
+            subLabel: 'Converse com #2 via Whatsapp',
             href: '#',
           },
       ],

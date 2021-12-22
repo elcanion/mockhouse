@@ -8,7 +8,7 @@ export const SocialMediaLinks = (props) => (
         >
         <IconButton 
             as="a" 
-            href="#" 
+            href="https://www.facebook.com/SISOLUCOESIMOBILIARIAS" 
             aria-label="Facebook"
             borderWidth={'1px'}
             borderColor={useColorModeValue('black', 'white')}
@@ -17,7 +17,7 @@ export const SocialMediaLinks = (props) => (
             />
         <IconButton 
             as="a" 
-            href="#" 
+            href="https://www.instagram.com/si.solucoes.imobiliarias/" 
             aria-label="Instagram"
             borderWidth={'1px'}
             borderColor={useColorModeValue('black', 'white')}
@@ -26,7 +26,7 @@ export const SocialMediaLinks = (props) => (
             />
         <IconButton 
             as="a" 
-            href="#" 
+            href="https://www.youtube.com/channel/UC2yQ0jnlQ52w4Tvx9OeZwTw" 
             aria-label="Youtube"
             borderWidth={'1px'}
             borderColor={useColorModeValue('black', 'white')}
