@@ -5,6 +5,7 @@ import {
     FormControl,
     FormLabel,
     Heading,
+    Icon,
     IconButton,
     Input,
     InputGroup,
@@ -153,7 +154,7 @@ const CONFETTI_DARK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
                       <FormLabel>Nome</FormLabel>
   
                       <InputGroup>
-                        <InputLeftElement children={<BsPerson />} />
+                        <Icon as={<BsPerson />} />
                         <Input type="text" name="name" placeholder="Seu nome" />
                       </InputGroup>
                     </FormControl>
@@ -162,7 +163,7 @@ const CONFETTI_DARK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
                       <FormLabel>Email</FormLabel>
   
                       <InputGroup>
-                        <InputLeftElement children={<MdOutlineEmail />} />
+                        <Icon as={<MdOutlineEmail />} />
                         <Input
                           type="email"
                           name="email"
