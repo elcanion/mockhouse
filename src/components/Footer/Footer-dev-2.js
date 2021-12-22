@@ -86,7 +86,7 @@ import { Unamed } from '../logo';
               width={20}
               //position={'absolute'}
               />
-          <Text>2021 *****.</Text>
+          <Text>2021 SI Soluções Imobiliárias.</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Facebook'} href={'https://www.facebook.com/SISOLUCOESIMOBILIARIAS'}>
               <FaFacebook />
