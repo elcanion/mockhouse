@@ -205,6 +205,7 @@ import { MdAccessibility } from 'react-icons/md';
   
   const MobileNavItem = ({ label, children, href }) => {
     const { isOpen, onToggle } = useDisclosure();
+    const iconColor = useColorModeValue('black', 'white');
   
     return (
       <Stack spacing={4} onClick={children && onToggle}>
@@ -225,7 +226,7 @@ import { MdAccessibility } from 'react-icons/md';
           {children && (
             <Icon
               as={ChevronDownIcon}
-              color={useColorModeValue('black', 'white')}
+              color={iconColor}
               transition={'all .25s ease-in-out'}
               transform={isOpen ? 'rotate(180deg)' : ''}
               w={6}

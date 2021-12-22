@@ -16,7 +16,7 @@ export const AdComment = ({imovel}) => {
                 {//<AdComment imovel={imovel}/>
                 currentUser && 
                 <FavouriteButton
-                bg={useColorModeValue('brand.light.yellow')}
+                //bg={useColorModeValue('brand.light.yellow')}
                 mx={5}
                 aria-label={`Add ${tipo} ${cidade} to your favourites`}
                 />
