@@ -86,15 +86,15 @@ import { Unamed } from '../logo';
               width={20}
               //position={'absolute'}
               />
-          <Text>2021 SI Soluções Imobiliárias.</Text>
+          <Text>2022 Mockhouse. Made by elcanion.</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Facebook'} href={'https://www.facebook.com/SISOLUCOESIMOBILIARIAS'}>
+            <SocialButton label={'Facebook'} href={'https://www.facebook.com/'}>
               <FaFacebook />
             </SocialButton>
-            <SocialButton label={'YouTube'} href={'https://www.youtube.com/channel/UC2yQ0jnlQ52w4Tvx9OeZwTw'}>
+            <SocialButton label={'YouTube'} href={'https://www.youtube.com/'}>
               <FaYoutube />
             </SocialButton>
-            <SocialButton label={'Instagram'} href={'https://www.instagram.com/si.solucoes.imobiliarias/'}>
+            <SocialButton label={'Instagram'} href={'https://www.instagram.com/'}>
               <FaInstagram />
             </SocialButton>
           </Stack>

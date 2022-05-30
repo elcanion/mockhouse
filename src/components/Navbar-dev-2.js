@@ -26,6 +26,7 @@ import { LoginButton, LogoutButton } from './LoginButton';
 import { Unamed } from './logo';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { MdAccessibility } from 'react-icons/md';
+import Image from 'next/image';
   
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
@@ -76,11 +77,12 @@ import { MdAccessibility } from 'react-icons/md';
               //padding={0}
               marginLeft={{ base: -10, md: 0}}
               
-              top={-3}
+              top={-2}
               height={20}
               width={20}
               position={'absolute'}
-              />
+        />
+
           </Link>
           
             <Flex display={{ base: 'none', md: 'flex' }} 
